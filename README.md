@@ -1,2 +1,37 @@
 # connections
 Graph of connections between cities.
+
+The web application API that listens on port 8080 and greets a user with Hello World! and exposes a health status endpoint.
+The application utilizes Spring Boot as standalone HTTP Web Server running inside Docker container.
+
+Git:
+https://github.com/alex-yakushev/connections.git
+
+To test default context
+-------------------------------------------------
+```
+curl -v http://localhost:8080
+```
+Output
+```
+$ curl http://localhost:8080
+Hello!
+```
+
+To check health 
+-------------------------------------------------
+```
+curl -v http://localhost:8080/health
+```
+Output
+```
+$ curl http://localhost:8080
+Hello World!
+```
+{
+  "status": "OK",
+  "version": "0.0.1",
+  "uptime": "up since 2020-09-19 23:39:59"
+  "cpu:utilization": "8.246428E-5"
+  "memory:utilization": "8.246428E-5"
+}
