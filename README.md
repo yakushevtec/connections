@@ -33,19 +33,19 @@ mvn clean install
 To build Docker Image with tag "wsapp"
 ----------------------------------------
 ```
-docker build --tag=wsapp .
+docker build --tag=connections .
 ```
 
 To run the container with on host port 8080
 ---------------------------------------------
 ```
-docker run -it -p 8080:8080 wsapp
+docker run -it -p 8080:8080 connections
 ```
 
 The helper command-line to do all
 -----------------------------------
 ```
-mvn clean install && docker build --tag=wsapp . && docker run -it -p 8080:8080 wsapp
+mvn clean install && docker build --tag=connections . && docker run -it -p 8080:8080 connections
 ```
 
 To test default context
