@@ -1,12 +1,11 @@
 package com;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.boot.test.context.*;
 import org.springframework.test.context.junit4.*;
 
 @RunWith( SpringRunner.class )
@@ -14,12 +13,14 @@ import org.springframework.test.context.junit4.*;
 public class ConnectionsTest
 {
 	@Autowired
-	Paths paths;
+	PathsDAO pathsDAO;
 
 	@Test
-	public void HelloWorld()
+	public void testConnections()
 	{
-		System.out.println("Hello World!");
-		assertFalse(paths.connected("city1", "city2"));
+		assertFalse(pathsDAO.connected("city1", "city2"));
+		assertTrue(pathsDAO.connected("Boston", "Newark"));
+		assertTrue(pathsDAO.connected("Boston", "Philadelphia"));
+		assertFalse(pathsDAO.connected("Philadelphia", "Albany"));
 	}
 }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.*;
 public class ConnectionsController
 {
 	@Autowired(required=true)
-	public Paths paths;
+	PathsDAO pathsDAO;
 
 	@RequestMapping(value = "/connected/{origin}/{destination}", method = RequestMethod.GET)
 	public String connected
@@ -17,7 +17,7 @@ public class ConnectionsController
 		, @PathVariable("destination") String destination
 	) 
 	{
-		boolean connected = paths.connected(origin, destination);
+		boolean connected = pathsDAO.connected(origin, destination);
 		return connected ? "yes" : "no";
 	}
 
@@ -28,7 +28,7 @@ public class ConnectionsController
 		, @RequestParam(value = "destination", required = true) String destination
 	) 
 	{
-		boolean connected = paths.connected(origin, destination);
+		boolean connected = pathsDAO.connected(origin, destination);
 		return connected ? "yes" : "no";
 	}
 }
