@@ -34,7 +34,7 @@
     </dependencies>
 
     <build>
-    	<finalName>wsapp</finalName>
+    	<finalName>connections</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

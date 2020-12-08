@@ -1,5 +1,8 @@
 package com;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import org.junit.runner.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,6 @@ public class ConnectionsTest
 	public void HelloWorld()
 	{
 		System.out.println("Hello World!");
-System.out.println("+++ "+paths.connected("city1", "city2"));
+		assertFalse(paths.connected("city1", "city2"));
 	}
 }

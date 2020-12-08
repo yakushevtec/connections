@@ -59,7 +59,7 @@ public class Paths
 				}
 				sitySet.add(city1);
 			}
-			System.out.println("++++ Found Cities: "+cities.size());
+			System.out.println("Found Cities: "+cities.size());
 		}
 		catch(Exception e){e.printStackTrace();}
 	}
